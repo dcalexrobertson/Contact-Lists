@@ -12,7 +12,7 @@
 
 -(NSString *)inputForPrompt:(NSString *)promptString
 {
-    NSLog(@"\nWhat would you like to do next?\n\n new - Create a new contact\n list - List all contacts\n quit - Exit Application");
+    NSLog(promptString);
     
     char inputChars[255];
     fgets(inputChars, 255, stdin);

@@ -21,6 +21,10 @@ int main(int argc, const char * argv[]) {
             
             NSLog(@"Fine then. Goodbye.");
             
+        } else if ([input isEqualToString:@"new"]) {
+            
+            NSString *fullName = [inputCollector inputForPrompt:@"Please enter full name:"];
+            NSString *email = [inputCollector inputForPrompt:@"Please enter email:"];
         }
         
     }
