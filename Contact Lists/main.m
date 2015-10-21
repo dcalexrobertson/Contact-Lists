@@ -9,27 +9,40 @@
 #import <Foundation/Foundation.h>
 #import "InputCollector.h"
 #import "Contact.h"
+#import "ContactLists.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         
         
         InputCollector *inputCollector = [[InputCollector alloc] init];
+        ContactLists *contactList = [[ContactLists alloc] init];
     
-        NSString* input = [inputCollector inputForPrompt:@"\nWhat would you like to do next?\n\n new - Create a new contact\n list - List all contacts\n quit - Exit Application"];
-        
-        if ([input isEqualToString:@"quit"]) {
+        while (true) {
             
-            NSLog(@"Fine then. Goodbye.");
+            NSString* input = [inputCollector inputForPrompt:@"\nWhat would you like to do next?\n\n new - Create a new contact\n list - List all contacts\n quit - Exit Application"];
             
-        } else if ([input isEqualToString:@"new"]) {
-            
-            NSString *fullName = [inputCollector inputForPrompt:@"Please enter full name:"];
-            NSString *email = [inputCollector inputForPrompt:@"Please enter email:"];
-            
-            Contact *contact = [[Contact alloc] init];
-            contact.name = fullName;
-            contact.email = email;
+            if ([input isEqualToString:@"quit"]) {
+                
+                NSLog(@"Fine then. Goodbye.");
+                break;
+                
+            } else if ([input isEqualToString:@"new"]) {
+                
+                NSString *fullName = [inputCollector inputForPrompt:@"Please enter full name:"];
+                NSString *email = [inputCollector inputForPrompt:@"Please enter email:"];
+                
+                Contact *contact = [[Contact alloc] init];
+                contact.name = fullName;
+                contact.email = email;
+                
+                [contactList addContact:contact];
+                
+            } else if ([input isEqualToString:@"list"]) {
+                
+                [contactList printContacts];
+                
+            }
         }
         
     }

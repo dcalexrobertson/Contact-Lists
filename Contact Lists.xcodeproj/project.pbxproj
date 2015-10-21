@@ -10,6 +10,7 @@
 		FA36638B1BD7049600A04CEB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA36638A1BD7049600A04CEB /* main.m */; };
 		FA3663931BD704FA00A04CEB /* InputCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3663921BD704FA00A04CEB /* InputCollector.m */; settings = {ASSET_TAGS = (); }; };
 		FA3663991BD7112600A04CEB /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = FA3663981BD7112600A04CEB /* Contact.m */; settings = {ASSET_TAGS = (); }; };
+		FA36639C1BD7134500A04CEB /* ContactLists.m in Sources */ = {isa = PBXBuildFile; fileRef = FA36639B1BD7134500A04CEB /* ContactLists.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		FA3663921BD704FA00A04CEB /* InputCollector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InputCollector.m; path = ../InputCollector.m; sourceTree = "<group>"; };
 		FA3663971BD7112600A04CEB /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
 		FA3663981BD7112600A04CEB /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		FA36639A1BD7134500A04CEB /* ContactLists.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactLists.h; sourceTree = "<group>"; };
+		FA36639B1BD7134500A04CEB /* ContactLists.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactLists.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				FA36638A1BD7049600A04CEB /* main.m */,
+				FA36639A1BD7134500A04CEB /* ContactLists.h */,
+				FA36639B1BD7134500A04CEB /* ContactLists.m */,
 				FA3663971BD7112600A04CEB /* Contact.h */,
 				FA3663981BD7112600A04CEB /* Contact.m */,
 				FA3663911BD704FA00A04CEB /* InputCollector.h */,
@@ -128,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA36639C1BD7134500A04CEB /* ContactLists.m in Sources */,
 				FA3663931BD704FA00A04CEB /* InputCollector.m in Sources */,
 				FA3663991BD7112600A04CEB /* Contact.m in Sources */,
 				FA36638B1BD7049600A04CEB /* main.m in Sources */,
