@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "InputCollector.h"
+#import "Contact.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -25,6 +26,10 @@ int main(int argc, const char * argv[]) {
             
             NSString *fullName = [inputCollector inputForPrompt:@"Please enter full name:"];
             NSString *email = [inputCollector inputForPrompt:@"Please enter email:"];
+            
+            Contact *contact = [[Contact alloc] init];
+            contact.name = fullName;
+            contact.email = email;
         }
         
     }
