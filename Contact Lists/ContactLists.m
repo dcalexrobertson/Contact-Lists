@@ -30,7 +30,7 @@
     for (int i = 0; i < [self.contactlist count]; i++) {
         
         Contact *listContact = self.contactlist[i];
-        NSLog(@"%i: %@ ()", i, listContact.name);
+        NSLog(@"\n%i: %@ (%@)", i, listContact.name, listContact.email);
     }
 }
 

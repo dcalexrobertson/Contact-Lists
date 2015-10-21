@@ -24,7 +24,7 @@ int main(int argc, const char * argv[]) {
             
             if ([input isEqualToString:@"quit"]) {
                 
-                NSLog(@"Fine then. Goodbye.");
+                NSLog(@"Goodbye.");
                 break;
                 
             } else if ([input isEqualToString:@"new"]) {
@@ -41,6 +41,10 @@ int main(int argc, const char * argv[]) {
             } else if ([input isEqualToString:@"list"]) {
                 
                 [contactList printContacts];
+                
+            } else {
+                
+                NSLog(@"That is not a valid entry.");
                 
             }
         }
