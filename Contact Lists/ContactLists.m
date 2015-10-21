@@ -48,5 +48,28 @@
     }
 }
 
+- (void)findContact:(NSString *)searchTerm
+{
+    int contactsFound = 0;
+    
+    for (int i = 0; i < [self.contacts count]; i++) {
+        
+        Contact *listContact = self.contacts[i];
+
+        if ([listContact.name containsString:searchTerm]) {
+            
+            NSLog(@"%i: %@ (%@)", i, listContact.name, listContact.email);
+            contactsFound++;
+
+        }
+    }
+    
+    if (contactsFound == 0) {
+        NSLog(@"Sorry. We could not find your contact");
+    }
+}
+
+
+
 
 @end
