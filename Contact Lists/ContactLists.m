@@ -15,23 +15,38 @@
 {
     self = [super init];
     if (self) {
-        _contactlist = [[NSMutableArray alloc] init];
+        _contacts = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)addContact:(Contact *)newContact
 {
-    [self.contactlist addObject:newContact];
+    [self.contacts addObject:newContact];
 }
 
 - (void)printContacts
 {
-    for (int i = 0; i < [self.contactlist count]; i++) {
+    for (int i = 0; i < [self.contacts count]; i++) {
         
-        Contact *listContact = self.contactlist[i];
+        Contact *listContact = self.contacts[i];
         NSLog(@"\n%i: %@ (%@)", i, listContact.name, listContact.email);
     }
 }
+
+- (void)showContact:(int)ID
+{
+    if (ID <= [self.contacts count] - 1) {
+        
+        Contact *listContact = self.contacts[ID];
+        NSLog(@"%i: %@ (%@)", ID, listContact.name, listContact.email);
+        
+    } else {
+        
+        NSLog(@"That is not a valid entry.");
+        
+    }
+}
+
 
 @end

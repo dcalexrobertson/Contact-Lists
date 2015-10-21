@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     
         while (true) {
             
-            NSString* input = [inputCollector inputForPrompt:@"\nWhat would you like to do next?\n\n new - Create a new contact\n list - List all contacts\n quit - Exit Application"];
+            NSString* input = [inputCollector inputForPrompt:@"\nWhat would you like to do next?\n\n new - Create a new contact\n list - List all contacts\n quit - Exit Application \n show - Show contact"];
             
             if ([input isEqualToString:@"quit"]) {
                 
@@ -41,6 +41,13 @@ int main(int argc, const char * argv[]) {
             } else if ([input isEqualToString:@"list"]) {
                 
                 [contactList printContacts];
+                
+            } else if ([input isEqualToString:@"show"]) {
+                
+                NSString *ID = [inputCollector inputForPrompt:@"Please enter ID number:"];
+                int IDint = [ID intValue];
+                
+                [contactList showContact:IDint];
                 
             } else {
                 

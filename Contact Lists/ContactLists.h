@@ -12,10 +12,12 @@
 
 @interface ContactLists : NSObject
 
-@property (strong, nonatomic) NSMutableArray *contactlist;
+@property (strong, nonatomic) NSMutableArray *contacts;
 
 - (void)addContact:(Contact *)newContact;
 
 - (void)printContacts;
+
+- (void)showContact:(int)ID;
 
 @end
