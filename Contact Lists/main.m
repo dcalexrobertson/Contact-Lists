@@ -29,14 +29,30 @@ int main(int argc, const char * argv[]) {
                 
             } else if ([input isEqualToString:@"new"]) {
                 
-                NSString *fullName = [inputCollector inputForPrompt:@"Please enter full name:"];
+                BOOL alreadyExists = NO;
+                
                 NSString *email = [inputCollector inputForPrompt:@"Please enter email:"];
                 
-                Contact *contact = [[Contact alloc] init];
-                contact.name = fullName;
-                contact.email = email;
+                for (Contact *contact in contactList.contacts) {
+                    if ([contact.email isEqualTo:email]) {
+                        NSLog(@"That email is already in your contact list");
+                        alreadyExists = YES;
+                    }
+                }
                 
-                [contactList addContact:contact];
+                if (!alreadyExists) {
+                    
+                    NSString *fullName = [inputCollector inputForPrompt:@"Please enter full name:"];
+                    
+                    
+                    Contact *contact = [[Contact alloc] init];
+                    contact.name = fullName;
+                    contact.email = email;
+                    
+                    [contactList addContact:contact];
+                    
+                }
+                
                 
             } else if ([input isEqualToString:@"list"]) {
                 
