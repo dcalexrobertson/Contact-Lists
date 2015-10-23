@@ -50,6 +50,36 @@ int main(int argc, const char * argv[]) {
                     contact.email = email;
                     
                     [contactList addContact:contact];
+    
+                    while (true) {
+                        
+                        NSString *phoneNumber = [inputCollector inputForPrompt:@"Please enter your phone number"];
+                        NSString *phoneNumberType = [inputCollector inputForPrompt:@"Is this a work, home, or cell number?"];
+                        
+                        
+                        if (!contact.phoneNumbers) {
+                            
+                            contact.phoneNumbers = [NSMutableDictionary dictionaryWithObject:phoneNumber forKey:phoneNumberType];
+
+                        } else {
+                            
+                            [contact.phoneNumbers setObject:phoneNumber forKey:phoneNumberType];
+                            
+                        }
+                        
+                        NSString *moreNumbers = [inputCollector inputForPrompt:@"Would you like to enter another number? (yes or no)"];
+                        
+                        if ([moreNumbers isEqualToString:@"no"]) {
+                            NSLog(@"You're entry has been added.");
+                            break;
+                        } else if ([moreNumbers isEqualToString:@"yes"]) {
+                            
+                        } else {
+                            NSLog(@"That is not a valid entry.");
+                        }
+                        
+                    }
+                    
                     
                 }
                 
