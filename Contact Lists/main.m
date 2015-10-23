@@ -20,7 +20,7 @@ int main(int argc, const char * argv[]) {
     
         while (true) {
             
-            NSString* input = [inputCollector inputForPrompt:@"\nWhat would you like to do next?\n\n new - Create a new contact\n list - List all contacts\n quit - Exit Application \n show - Show contact \n find - Search for Contact"];
+            NSString* input = [inputCollector inputForPrompt:@"\nWhat would you like to do next?\n\n new - Create a new contact\n list - List all contacts\n quit - Exit Application \n show - Show contact \n find - Search for Contact\n history - Print Last 3 Commands"];
             
             if ([input isEqualToString:@"quit"]) {
                 
@@ -101,8 +101,12 @@ int main(int argc, const char * argv[]) {
                 
                 [contactList findContact:searchTerm];
                 
+            } else if ([input isEqualToString:@"history"]) {
+                
+                NSLog(@"%@", inputCollector.history);
+                
             } else {
-            
+                
                 NSLog(@"That is not a valid entry.");
                 
             }
